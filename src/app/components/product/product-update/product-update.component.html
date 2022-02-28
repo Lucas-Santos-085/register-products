@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-title>Alterar Produto</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Nome"
+        [(ngModel)]="product.name"
+        name="name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Preço (R$)"
+        [(ngModel)]="product.price"
+        name="price"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="classification"
+            >Classificação</label
+          >
+        </div>
+        <select
+          class="custom-select"
+          id="classification"
+          name="classification"
+          [(ngModel)]="product.classification"
+        >
+          <option>Selecione a classificação</option>
+          <option value="Escritório">Escritório</option>
+          <option value="Informática">Informática</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="updateProduct()" color="primary">
+    Atualizar
+  </button>
+  <button mat-raised-button (click)="cancel()">Cancelar</button>
+</mat-card>
